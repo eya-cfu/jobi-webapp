@@ -1,8 +1,8 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 body {
-    color: #fff;
-    background: #bedce3   ;
+    color: rgb(29, 27, 27);
+    background: #ebeff0   ;
     font-family: 'Roboto', sans-serif;
 }
 .form-control {		
@@ -56,7 +56,7 @@ body {
     outline: none !important;
 }
 .signup-form a {
-    color: #fff;
+    color: rgb(58, 49, 49);
     text-decoration: underline;
 }
 .signup-form a:hover {
