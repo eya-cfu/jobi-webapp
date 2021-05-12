@@ -12,6 +12,10 @@
 @import '../../assets/css/main.css';
 @import '../../assets/css/bootstrap.min.css';
 
+.btn-toolbar{
+  display: flex;
+  justify-content: center;
+}
 html {
     line-height: 1.15;
     /* 1 */
