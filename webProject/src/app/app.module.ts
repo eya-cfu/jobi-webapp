@@ -10,6 +10,9 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { JobListingComponent } from './job-listing/job-listing.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,9 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     AboutComponent,
     SearchComponent,
     TestimonialComponent,
+    ProfileComponent,
+    EmployeeNavbarComponent,
+    JobListingComponent,
 
   ],
   imports: [
