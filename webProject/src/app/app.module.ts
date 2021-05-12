@@ -13,6 +13,8 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
 import { JobListingComponent } from './job-listing/job-listing.component';
+import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
+import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { JobListingComponent } from './job-listing/job-listing.component';
     ProfileComponent,
     EmployeeNavbarComponent,
     JobListingComponent,
+    EmployeeRegistrationComponent,
+    CompanyRegistrationComponent,
 
   ],
   imports: [
