@@ -10,11 +10,6 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { SearchComponent } from './search/search.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
-import { ProfileComponent } from './profile/profile.component';
-import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
-import { JobListingComponent } from './job-listing/job-listing.component';
-import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
-import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +22,6 @@ import { CompanyRegistrationComponent } from './company-registration/company-reg
     AboutComponent,
     SearchComponent,
     TestimonialComponent,
-    ProfileComponent,
-    EmployeeNavbarComponent,
-    JobListingComponent,
-    EmployeeRegistrationComponent,
-    CompanyRegistrationComponent,
 
   ],
   imports: [
