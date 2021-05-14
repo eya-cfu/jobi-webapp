@@ -15,6 +15,8 @@ import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.compo
 import { JobListingComponent } from './job-listing/job-listing.component';
 import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,9 @@ import { CompanyRegistrationComponent } from './company-registration/company-reg
     JobListingComponent,
     EmployeeRegistrationComponent,
     CompanyRegistrationComponent,
+    RegistrationComponent,
+    CompanyProfileComponent,
+   
 
   ],
   imports: [

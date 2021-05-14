@@ -1,24 +1,11 @@
 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bootstrap Cool Sign Up Form</title>
-</head>
-<body>
-    <app-navbar></app-navbar>
-    <br>
-    <br>
-    <br>
-    <br>
-<div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
-		<h2> Sign Up</h2>
+<div id="sign" class="signup-form">
+    <form class="form" action="/examples/actions/confirmation.php" method="post">
+		<h2> Employee sign Up</h2>
 		<p>It's free and only takes a minute.</p>
 		<hr>
+        <div class="row">
+    <div class="col-md-6">
         <div class="form-group">
 			<label>Username</label>
         	<input type="text" class="form-control" name="username" required="required">
@@ -39,12 +26,14 @@
 			<label>School</label>
         	<input type="text" class="form-control" name="school" required="required">
         </div>
+    </div>
+    <div class="col-md-6">
         <div class="form-group">
 			<label>Date of birth</label>
         	<input type="date" class="form-control" name="Birthdate" required="required">
         </div>
         <div class="form-group">
-			<label>Date of birth</label>
+			<label>Gender</label>
             <br>
                 <input type="radio" name="gender" value="male" checked> Male<br>
                 <input type="radio" name="gender" value="female"> Female<br>
@@ -61,8 +50,8 @@
 		<div class="form-group">
             <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
         </div>
+    </div>
+    </div>
     </form>
 	<div class="text-center">Already have an account? <a  routerLink="/signin" routerLinkActive="active" >Login here</a></div>
 </div>
-</body>
-</html>

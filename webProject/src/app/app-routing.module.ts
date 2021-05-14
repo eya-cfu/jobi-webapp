@@ -1,3 +1,4 @@
+import { registerLocaleData } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -8,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';  
 import { JobListingComponent } from './job-listing/job-listing.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { SignInComponent} from './sign-in/sign-in.component';
 
 const routes: Routes = [
@@ -34,6 +36,10 @@ const routes: Routes = [
   },
   {
     path:'company-registration', component: CompanyRegistrationComponent
+  },
+  { path:'registration', component: RegistrationComponent, children: [
+    { path:'', component:EmployeeRegistrationComponent},{path:'companyRegistration', component:CompanyRegistrationComponent}
+  ]
   }
 ];
 
@@ -42,4 +48,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents =[HomeComponent,SignInComponent,ContactComponent,AboutComponent,JobListingComponent,EmployeeRegistrationComponent,CompanyRegistrationComponent]
+export const routingComponents =[HomeComponent,SignInComponent,ContactComponent,AboutComponent,JobListingComponent,EmployeeRegistrationComponent,CompanyRegistrationComponent,]
