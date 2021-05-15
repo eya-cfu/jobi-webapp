@@ -8,7 +8,6 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { SearchComponent } from './search/search.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
@@ -27,7 +26,6 @@ import { CompanyProfileComponent } from './company-profile/company-profile.compo
     SignInComponent,
     ContactComponent,
     AboutComponent,
-    SearchComponent,
     TestimonialComponent,
     ProfileComponent,
     EmployeeNavbarComponent,
