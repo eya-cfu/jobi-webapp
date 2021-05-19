@@ -5,6 +5,7 @@ use git bash command line in your work directory
 
 To push your work to the github repo:
 
+# git checkout [branch name]
 # add .
 # commit -m "PUT CHANGES MADE"
 # git push origin [branch name]
