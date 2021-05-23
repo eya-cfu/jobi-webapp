@@ -13,8 +13,8 @@ export class Student {
   @JoinColumn()
   id: number;
 
-  @Column()
-  dateOfBirth: Date;
+  @Column({ type: 'date' })
+  dateOfBirth: string;
 
   @Column({ default: false })
   driverLicense: boolean;
@@ -34,9 +34,9 @@ export class Student {
   @Column({ length: 100 })
   location: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 50, nullable: true })
   picture: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 50, nullable: true })
   cv: string;
 }

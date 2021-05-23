@@ -1,0 +1,3 @@
+work on other services and routers
+work on validation (pipes)
+work on auth
