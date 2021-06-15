@@ -37,7 +37,7 @@
 								</div>
 								<div *ngIf="emailinput.invalid && emailinput.dirty"
 									class="alert alert-danger"	>
-								Veuillez saisir un email valide
+								Please enter a valid email
 								</div>
 								<div class="top-margin form-group">
 									<label>Password <span class="text-danger">*</span></label>
@@ -45,7 +45,7 @@
 								</div>
 								<div *ngIf="passwordinput.invalid && passwordinput.dirty"
 									class="alert alert-danger"	>
-								Veuillez saisir un mot de passe de taille minimale 4
+									Please enter a valid password: minimum length is 4
 								</div>
 
 								<hr>
@@ -54,7 +54,7 @@
 									<div class="col-lg-8">
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" [disabled]="!form.valid" type="submit">Sign in</button>
+										<button class="btn btn-action" [disabled]="!form.valid" type="submit" (click)="onSubmit(form)">Sign in</button>
 									</div>
 								</div>
 							</form>
