@@ -29,15 +29,23 @@
 							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signup.html">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
 							<hr>
 							
-							<form ngSubmit="onSubmit(form)" #form="ngForm">
-								<div class="top-margin">
+							<form ngSubmit="onSubmit(form)" #form="ngForm" required>
+								<div class="top-margin form-group">
 									<label>Email <span class="text-danger">*</span></label>
-									<input #emailinput="ngModel" ngModel  class="form-control" type="email"
-									maxlength="30" required>
+									<input required name="email" email #emailinput="ngModel" ngModel  class="form-control" type="email"
+									maxlength="30" >
 								</div>
-								<div class="top-margin">
+								<div *ngIf="emailinput.invalid && emailinput.dirty"
+									class="alert alert-danger"	>
+								Veuillez saisir un email valide
+								</div>
+								<div class="top-margin form-group">
 									<label>Password <span class="text-danger">*</span></label>
-									<input #passwordinput="ngModel" ngModel type="password" class="form-control" maxlength="15">
+									<input #passwordinput="ngModel" ngModel name="password" type="password" class="form-control" minlength="4"maxlength="15" required>
+								</div>
+								<div *ngIf="passwordinput.invalid && passwordinput.dirty"
+									class="alert alert-danger"	>
+								Veuillez saisir un mot de passe de taille minimale 4
 								</div>
 
 								<hr>
@@ -46,7 +54,7 @@
 									<div class="col-lg-8">
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Sign in</button>
+										<button class="btn btn-action" [disabled]="!form.valid" type="submit">Sign in</button>
 									</div>
 								</div>
 							</form>
@@ -54,7 +62,7 @@
 					</div>
 
 				</div>
-				
+			
 			</article>
 			<!-- /Article -->
 
@@ -63,3 +71,10 @@
 	
 	<!--footer-->
 	<app-footer></app-footer>
+
+
+
+
+
+
+	

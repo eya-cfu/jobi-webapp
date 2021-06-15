@@ -16,7 +16,7 @@ import { EmployeeRegistrationComponent } from './employee-registration/employee-
 import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm, NgModel, NgModelGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -44,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

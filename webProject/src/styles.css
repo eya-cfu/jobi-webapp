@@ -3,6 +3,10 @@
 @import 'assets/css/bootstrap.min.css';
 @import '~font-awesome';
 
+input.ng-invalid.ng-touched{
+    border:1.5px solid rgb(180, 46, 46);
+} 
+
 /*@import 'assets/css/1.css';
 @import 'assets/css/2.css';
 @import 'assets/css/4.css';
