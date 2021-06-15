@@ -1,3 +1,4 @@
+    <div class="pg">
     <!--navbar-->
     <app-navbar></app-navbar>
 
@@ -8,15 +9,26 @@
     <br>
     <br>
 
-    <div>
-    <ul class="nav nav-tabs navigation">
-        <li role="presentation" ><a routerLink="/registration" routerLinkActive="active">Employee registration</a></li>
-        <li role="presentation" ><a routerLink="/registration/companyRegistration" routerLinkActive="active">Company registration</a></li>
+      <div class="container ">
+        <div class="card  border-primary rounded">
+        <div >
+          <ul class="nav nav-tabs navigation">
+            <li role="presentation" ><a routerLink="/registration" routerLinkActive="active">Get a job</a></li>
+            <li role="presentation" ><a routerLink="/registration/companyRegistration" routerLinkActive="active">Become an employer</a></li>
+          </ul> 
+        </div>
+      
 
-      </ul> 
+
+        <!--Employee and Company SignUp forms-->
+        <div class=routing>
+          
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>
+  <br>
+  
 </div>
+  
 
-<!--Employee and Company SignUp forms-->
-<div class=routing>
-      <router-outlet></router-outlet>
- </div>

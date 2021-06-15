@@ -1,3 +1,4 @@
+	
 	<!-- Fixed navbar -->
 	<app-navbar></app-navbar>
 	<!-- /.navbar -->
@@ -28,21 +29,21 @@
 							<p class="text-center text-muted">Lorem ipsum dolor sit amet, <a href="signup.html">Register</a> adipisicing elit. Quo nulla quibusdam cum doloremque incidunt nemo sunt a tenetur omnis odio. </p>
 							<hr>
 							
-							<form>
+							<form ngSubmit="onSubmit(form)" #form="ngForm">
 								<div class="top-margin">
-									<label>Username/Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<label>Email <span class="text-danger">*</span></label>
+									<input #emailinput="ngModel" ngModel  class="form-control" type="email"
+									maxlength="30" required>
 								</div>
 								<div class="top-margin">
 									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
+									<input #passwordinput="ngModel" ngModel type="password" class="form-control" maxlength="15">
 								</div>
 
 								<hr>
 
 								<div class="row">
 									<div class="col-lg-8">
-										<b><a href="">Forgot password?</a></b>
 									</div>
 									<div class="col-lg-4 text-right">
 										<button class="btn btn-action" type="submit">Sign in</button>

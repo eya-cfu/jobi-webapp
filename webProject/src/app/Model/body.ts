@@ -9,8 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */
-import { User } from './user';
+import { Student } from './student';
 
-export interface Employer extends User { 
-    companyId?: number;
+export interface Body { 
+    student?: Student;
+    cv?: Blob;
+    picture?: Blob;
 }

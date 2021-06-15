@@ -33,7 +33,7 @@ const routes: Routes = [
     path:'listing',component: JobListingComponent
   },
   {
-    path:'employee-registration', component: EmployeeRegistrationComponent
+    path:'employee-registration/{id}', component: EmployeeRegistrationComponent
   },
   {
     path:'company-registration', component: CompanyRegistrationComponent
