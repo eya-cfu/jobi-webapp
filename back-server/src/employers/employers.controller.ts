@@ -3,43 +3,46 @@ import {
   Get,
   Post,
   Body,
-  Patch,
   Param,
   Delete,
+  Put,
+  UseGuards,
 } from '@nestjs/common';
-import { EmployersService } from './employers.service';
+import { JwtAuthGuard } from 'src/users/auth/jwt-auth.guard';
 import { CreateEmployerDto } from './dto/create-employer.dto';
-import { UpdateEmployerDto } from './dto/update-employer.dto';
+import { EmployersService } from './employers.service';
 
 @Controller('employers')
 export class EmployersController {
   constructor(private readonly employersService: EmployersService) {}
 
   @Post()
-  create(@Body() createEmployerDto: CreateEmployerDto) {
-    return this.employersService.create(createEmployerDto);
+  async create(@Body() data: CreateEmployerDto) {
+    return this.employersService.create(data);
   }
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.employersService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.employersService.findOne(+id);
+  async findOne(@Param('id') id: number) {
+    return this.employersService.findOne(id);
   }
 
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateEmployerDto: UpdateEmployerDto,
-  ) {
-    return this.employersService.update(+id, updateEmployerDto);
+  @Get(':id/offers')
+  async getOffers(@Param('id') id: number) {
+    return this.employersService.getOffers(id);
+  }
+
+  @Put(':id')
+  async update(@Param('id') id: number, @Body() data: CreateEmployerDto) {
+    return this.employersService.update(id, data);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.employersService.remove(+id);
+  async remove(@Param('id') id: number) {
+    return this.employersService.remove(id);
   }
 }

@@ -3,12 +3,14 @@ import {
   Get,
   Post,
   Body,
-  Patch,
+  Put,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { OffersService } from './offers.service';
 import { CreateOfferDto } from './dto/create-offer.dto';
+import { Offer } from './entities/offer.entity';
 import { UpdateOfferDto } from './dto/update-offer.dto';
 
 @Controller('offers')
@@ -16,23 +18,32 @@ export class OffersController {
   constructor(private readonly offersService: OffersService) {}
 
   @Post()
-  create(@Body() createOfferDto: CreateOfferDto) {
+  async create(@Body() createOfferDto: CreateOfferDto) {
     return this.offersService.create(createOfferDto);
   }
 
   @Get()
-  findAll() {
+  async findAll() {
     return this.offersService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.offersService.findOne(+id);
+  @Get('filter')
+  async findFiltered(
+    @Query('employmentType') emp: string,
+    @Query('category') cat: string,
+    @Query('location') loc: string,
+  ): Promise<Offer[]> {
+    return this.offersService.findFiltered(emp, cat, loc);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateOfferDto: UpdateOfferDto) {
-    return this.offersService.update(+id, updateOfferDto);
+  @Get(':id')
+  async findOne(@Param('id') id: number): Promise<Offer> {
+    return this.offersService.findOne(id);
+  }
+
+  @Put(':id')
+  async update(@Param('id') id: number, @Body() data: UpdateOfferDto) {
+    return this.offersService.update(id, data);
   }
 
   @Delete(':id')

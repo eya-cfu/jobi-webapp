@@ -34,14 +34,14 @@ export class Offer {
   title: string;
 
   @Column()
-  dataPosted: Date;
+  datePosted: string;
 
   @Column({
     type: 'enum',
     enum: Status,
     default: Status.OPEN,
   })
-  Status: Status;
+  status: Status;
 
   @Column({
     type: 'enum',
@@ -93,10 +93,10 @@ export class Offer {
   languages: string;
 
   @ManyToOne(() => Employer, { nullable: false })
-  @JoinColumn()
-  employer: Employer;
+  @JoinColumn({ referencedColumnName: 'user' })
+  employer: number;
 
-  @ManyToOne(() => Company, { nullable: false })
-  @JoinColumn()
-  company: Company;
+  @ManyToOne(() => Company, { nullable: false, eager: true })
+  @JoinColumn({ referencedColumnName: 'id' })
+  company: number;
 }

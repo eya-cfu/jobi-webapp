@@ -6,6 +6,11 @@ export enum Gender {
   Other = 'X',
 }
 
+export enum Role {
+  Student = 'student',
+  Employer = 'employer',
+}
+
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
@@ -14,11 +19,17 @@ export class User {
   @Column({ length: 50 })
   name: string;
 
-  @Column({ length: 100 })
+  @Column({ length: 100, unique: true })
   email: string;
 
-  @Column({ length: 20 })
+  @Column({ select: false })
   password: string;
+
+  @Column({ select: false })
+  salt: string;
+
+  @Column({ type: 'enum', enum: Role, default: null })
+  role: string;
 
   @Column()
   tel: number;
