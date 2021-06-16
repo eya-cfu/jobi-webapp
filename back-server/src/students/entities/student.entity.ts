@@ -11,7 +11,7 @@ export class Student {
     onDelete: 'CASCADE',
   })
   @JoinColumn()
-  id: number;
+  user: number;
 
   @Column({ type: 'date' })
   dateOfBirth: string;

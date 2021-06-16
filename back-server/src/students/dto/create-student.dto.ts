@@ -1,18 +1,19 @@
 import {
-  IsDate,
   IsNotEmpty,
   IsString,
   MaxLength,
   IsBoolean,
   IsUrl,
   IsInt,
+  IsDateString,
+  IsArray,
 } from 'class-validator';
 
-export class StudentDto {
-  @IsInt()
-  id: number;
+export class CreateStudentDto {
+  @IsInt() //required: related user id
+  userId: number;
 
-  @IsNotEmpty()
+  @IsDateString()
   dateOfBirth: string;
 
   @IsBoolean()
@@ -28,14 +29,11 @@ export class StudentDto {
   @IsNotEmpty()
   school: string;
 
-  @IsString()
-  @MaxLength(20)
-  @IsNotEmpty()
-  languages: string;
+  @IsArray()
+  languages: string[];
 
   @IsString()
   @MaxLength(100)
-  @IsNotEmpty()
   @IsUrl()
   linkedin: string;
 

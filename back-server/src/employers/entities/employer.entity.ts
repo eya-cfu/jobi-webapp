@@ -12,9 +12,9 @@ export class Employer {
     onDelete: 'CASCADE',
   })
   @JoinColumn()
-  id: number;
+  user: number;
 
-  @OneToOne(() => Company, { nullable: false })
+  @OneToOne(() => Company, { nullable: false, eager: true })
   @JoinColumn()
-  company: Company;
+  company: number;
 }

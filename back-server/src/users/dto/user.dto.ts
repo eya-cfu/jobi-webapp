@@ -5,7 +5,7 @@ import {
   IsString,
   MaxLength,
 } from 'class-validator';
-import { Gender } from './entities/user.entity';
+import { Gender } from '../entities/user.entity';
 
 export class UserDto {
   @IsString()

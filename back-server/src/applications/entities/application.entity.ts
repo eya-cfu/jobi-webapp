@@ -9,7 +9,7 @@ import {
   Entity,
 } from 'typeorm';
 
-enum Status {
+export enum Status {
   accepted = 'accepted',
   refused = 'refused',
   processing = 'processing',
@@ -20,16 +20,20 @@ export class Application {
   @PrimaryGeneratedColumn()
   appID: number;
 
-  @ManyToOne(() => Student, { nullable: false })
+  @ManyToOne(() => Student, {
+    nullable: false,
+    eager: true,
+    orphanedRowAction: 'delete',
+  })
   @JoinColumn()
-  student: Student;
+  student: number;
 
-  @OneToOne(() => Offer, { nullable: false })
+  @OneToOne(() => Offer, { nullable: false, eager: true })
   @JoinColumn()
-  offer: Offer;
+  offer: number;
 
   @Column()
-  appDate: Date;
+  appDate: string;
 
   @Column({
     length: 1000,

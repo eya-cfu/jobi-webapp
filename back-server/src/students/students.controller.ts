@@ -1,17 +1,19 @@
-import { Res, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Res, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import {
   Controller,
   Get,
   Post,
   Body,
-  Patch,
   Param,
+  Put,
   Delete,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { StudentDto } from './dto/student.dto';
+import { JwtAuthGuard } from 'src/users/auth/jwt-auth.guard';
+import { CreateStudentDto } from './dto/create-student.dto';
 import {
+  cvFileFilter,
   editFileName,
   imageFileFilter,
   StudentsService,
@@ -23,11 +25,12 @@ export class StudentsController {
   constructor(private readonly studentsService: StudentsService) {}
 
   @Post()
-  create(@Body() data: StudentDto) {
+  async create(@Body() data: CreateStudentDto) {
     return this.studentsService.create(data);
   }
 
   //Note: This destination starts at the root path of the project, not the src folder!
+  //this is a multi-form data request
   @Post(':id/pic')
   @UseInterceptors(
     FileInterceptor('picture', {
@@ -42,7 +45,7 @@ export class StudentsController {
     @Param('id') id: number,
     @UploadedFile() pic: Express.Multer.File,
   ) {
-    this.studentsService.setPic(id, `${pic.path}`);
+    await this.studentsService.setPic(id, `${pic.path}`);
   }
 
   @Post(':id/cv')
@@ -52,9 +55,13 @@ export class StudentsController {
         destination: '../uploads/cvs',
         filename: editFileName,
       }),
+      fileFilter: cvFileFilter,
     }),
   )
-  uploadCv(@UploadedFile() cv: Express.Multer.File, @Param('id') id: number) {
+  async uploadCv(
+    @UploadedFile() cv: Express.Multer.File,
+    @Param('id') id: number,
+  ) {
     this.studentsService.setCV(id, `${cv.path}`);
   }
 
@@ -70,23 +77,28 @@ export class StudentsController {
     return res.sendFile(this.path.resolve(pic));
   }
 
+  @Get(':id/applications')
+  async getStudentApps(@Param('id') id: number) {
+    return this.studentsService.findApps(id);
+  }
+
   @Get()
-  findAll() {
-    return this.studentsService.findAll();
+  async findAll() {
+    return await this.studentsService.findAll();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.studentsService.findOne(+id);
+  async findOne(@Param('id') id: number) {
+    return this.studentsService.findOne(id);
   }
-  //GOTTA REVISE THIS, CREATE NEW UPDATE DTO FOR PATCH
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() data: StudentDto) {
+
+  @Put(':id')
+  async update(@Param('id') id: number, @Body() data: CreateStudentDto) {
     return this.studentsService.update(id, data);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.studentsService.remove(+id);
+  async remove(@Param('id') id: number) {
+    return this.studentsService.remove(id);
   }
 }

@@ -20,6 +20,6 @@ export class Company {
   @Column({ length: 100 })
   email: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 50, nullable: true })
   logo: string;
 }
