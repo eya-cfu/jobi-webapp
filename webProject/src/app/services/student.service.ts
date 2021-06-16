@@ -1,4 +1,4 @@
- import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import  {basePath} from  "../constants"; 
 import { HttpClient, HttpHeaders, HttpParams, }  from '@angular/common/http';
 import { JobApplication } from '../model/jobApplication';

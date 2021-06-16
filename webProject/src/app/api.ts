@@ -11,4 +11,3 @@ import { StudentService } from '../app/services/student.service';
 export * from '../app/services/user.service';
 import { UserService } from '../app/services/user.service';
 export const APIS = [CompanyService, EmployerService, JobApplicationService, JobOfferService, StudentService, UserService];
-
