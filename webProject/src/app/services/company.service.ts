@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import  {basePath} from  "./constants";
+import  {basePath} from  "../constants";
 import { HttpClient, HttpHeaders, }  from '@angular/common/http';
-import { Company } from './model/company';
-import { JobOffer } from './model/jobOffer';
+import { Company } from '../model/company';
+import { JobOffer } from '../model/jobOffer';
 import { Observable } from 'rxjs';
 
 @Injectable({

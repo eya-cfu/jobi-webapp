@@ -4,20 +4,14 @@
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/19.png" alt="Progressus HTML5 template"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li ><a routerLink="/" routerLinkActive="active text-primary" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
                 <li><a routerLink="/about" routerLinkActive="active" >About</a></li>
-                <li class="dropdown">
-                    <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                    </ul>
-                </li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-                <li><a class="btn" routerLink="/signin" routerLinkActive="active">SIGN IN </a></li>
+                <li><a routerLink="/contact" routerLinkActive="active text-primary">Contact</a></li>
+                <li><a class="btn" routerLink="/signin/studentsignin" routerLinkActive="active">SIGN IN </a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

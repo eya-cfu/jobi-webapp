@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-/*@import'~bootstrap/dist/css/bootstrap.min.css' ;*/
-@import 'assets/css/1.css';
+/*@import'~bootstrap';*/
+@import 'assets/css/bootstrap.min.css';
+@import '~font-awesome';
+
+input.ng-invalid.ng-touched{
+    border:1.5px solid rgb(180, 46, 46);
+} 
+
+/*@import 'assets/css/1.css';
 @import 'assets/css/2.css';
 @import 'assets/css/4.css';
 @import 'assets/css/5.css';
@@ -12,9 +19,7 @@
 @import 'assets/css/11.css';
 @import 'assets/css/12.css';
 @import 'assets/css/main.css';
- @import 'assets/css/bootstrap.min.css';
-
-
+@import 'assets/css/bootstrap.min.css';*/
 
  
 
