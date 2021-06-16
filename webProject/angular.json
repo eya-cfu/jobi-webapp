@@ -122,6 +122,6 @@
   },
   "defaultProject": "webProject",
   "cli": {
-    "analytics": false
+    "analytics": "da411385-c23c-4397-a1b7-76d5fd81fc3f"
   }
 }

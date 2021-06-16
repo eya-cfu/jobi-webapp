@@ -8,15 +8,9 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
-                <li class="active"><a routerLink="/" routerLinkActive="active">Home</a></li>
+                <li ><a routerLink="/" routerLinkActive="active text-primary" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
                 <li><a routerLink="/about" routerLinkActive="active" >About</a></li>
-                <li class="dropdown">
-                    <ul class="dropdown-menu">
-                        <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                        <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                    </ul>
-                </li>
-                <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+                <li><a routerLink="/contact" routerLinkActive="active text-primary">Contact</a></li>
                 <li><a class="btn" routerLink="/signin" routerLinkActive="active">SIGN IN </a></li>
             </ul>
         </div><!--/.nav-collapse -->

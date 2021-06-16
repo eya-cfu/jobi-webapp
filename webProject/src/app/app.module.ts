@@ -8,8 +8,16 @@ import { FooterComponent } from './footer/footer.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
-import { SearchComponent } from './search/search.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { JobListingComponent } from './job-listing/job-listing.component';
+import { EmployeeRegistrationComponent } from './employee-registration/employee-registration.component';
+import { CompanyRegistrationComponent } from './company-registration/company-registration.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { CompanyProfileComponent } from './company-profile/company-profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,13 +28,24 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     SignInComponent,
     ContactComponent,
     AboutComponent,
-    SearchComponent,
     TestimonialComponent,
+    ProfileComponent,
+    EmployeeNavbarComponent,
+    JobListingComponent,
+    EmployeeRegistrationComponent,
+    CompanyRegistrationComponent,
+    RegistrationComponent,
+    CompanyProfileComponent,
+    
+   
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

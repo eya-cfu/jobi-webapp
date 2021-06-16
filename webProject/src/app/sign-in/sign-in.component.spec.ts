@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SignInComponent } from './sign-in.component';
+import { Component, NgModule, VERSION } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule, NgForm} from '@angular/forms';
 
 describe('SignInComponent', () => {
   let component: SignInComponent;

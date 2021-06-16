@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import  {basePath} from  "./constants";
+ import { Injectable } from '@angular/core';
+import  {basePath} from  "../constants"; 
 import { HttpClient, HttpHeaders, HttpParams, }  from '@angular/common/http';
-import { JobApplication } from './model/jobApplication';
-import { Student } from './model/student';
+import { JobApplication } from '../model/jobApplication';
+import { Student } from '../Models/student';
 import { Observable } from 'rxjs';
 
 
@@ -236,3 +236,4 @@ export class StudentService {
   }
 
 }
+

@@ -1,29 +1,10 @@
 
-   <app-employee-navbar></app-employee-navbar>
-<br>
-<!doctype html>
-<html class="no-js" lang="zxx">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-         <title>Job board HTML-5 Template </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="manifest" href="site.webmanifest">
-		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-        
+   <!--navbar-->
+   <app-navbar></app-navbar>
 
-   </head>
+    <br> 
 
-
-
-   <body>
-       
-   
-    <main>
-
-      
-        <!-- Job List Area Start -->
+       <!-- Job List Area Start -->
         <div class="job-listing-area pt-120 pb-120">
             <div class="container">
                 <div class="row">
@@ -45,147 +26,150 @@
                             </div>
                         </div>
                         <!-- Job Category Listing start -->
-                        <div class="job-category-listing mb-50">
-                            <!-- single one -->
-                            <div class="single-listing">
-                               <div class="small-section-tittle2">
-                                     <h4>Job Category</h4>
-                               </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">All Category</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Job Type</h4>
+                        <form [formGroup]="filter">
+                            <div class="job-category-listing mb-50">
+                                <!-- single one -->
+                                <div class="single-listing">
+                                   <div class="small-section-tittle2">
+                                         <h4>Job Category</h4>
+                                   </div>
+                                    <!-- Select job items start -->
+                                    <div class="select-job-items2">
+                                        <select name="select" formControlName="category">
+                                            <option value="">All Category</option>
+                                            <option value="">Category 1</option>
+                                            <option value="">Category 2</option>
+                                            <option value="">Category 3</option>
+                                            <option value="">Category 4</option>
+                                        </select>
                                     </div>
-                                    <label class="container">Full Time
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Part Time
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Remote
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Freelance
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single two -->
-                            <div class="single-listing">
-                               <div class="small-section-tittle2">
-                                     <h4>Job Location</h4>
-                               </div>
-                                <!-- Select job items start -->
-                                <div class="select-job-items2">
-                                    <select name="select">
-                                        <option value="">Anywhere</option>
-                                        <option value="">Category 1</option>
-                                        <option value="">Category 2</option>
-                                        <option value="">Category 3</option>
-                                        <option value="">Category 4</option>
-                                    </select>
-                                </div>
-                                <!--  Select job items End-->
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pt-80 pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Experience</h4>
+                                    <!--  Select job items End-->
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Job Type</h4>
+                                        </div>
+                                        <label class="container">Full Time
+                                            <input type="checkbox" formControlName="type">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Part Time
+                                            <input type="checkbox" checked="checked active" formControlName="type">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container" formControlName="type">Remote
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container" formControlName="type">Freelance
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
-                                    <label class="container">1-2 Years
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">2-3 Years
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">3-6 Years
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">6-more..
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <!-- select-Categories End -->
                                 </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <!-- single three -->
-                            <div class="single-listing">
-                                <!-- select-Categories start -->
-                                <div class="select-Categories pb-50">
-                                    <div class="small-section-tittle2">
-                                        <h4>Posted Within</h4>
+                                <!-- single two -->
+                                <div class="single-listing">
+                                   <div class="small-section-tittle2">
+                                         <h4>Job Location</h4>
+                                   </div>
+                                    <!-- Select job items start -->
+                                    <div class="select-job-items2">
+                                        <select name="select"  formControlName="location">
+                                            <option value="">Anywhere</option>
+                                            <option value="">Category 1</option>
+                                            <option value="">Category 2</option>
+                                            <option value="">Category 3</option>
+                                            <option value="">Category 4</option>
+                                        </select>
                                     </div>
-                                    <label class="container">Any
-                                        <input type="checkbox" >
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Today
-                                        <input type="checkbox" checked="checked active">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 2 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 3 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 5 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container">Last 10 days
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <!--  Select job items End-->
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pt-80 pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Experience</h4>
+                                        </div>
+                                        <label class="container">1-2 Years
+                                            <input type="checkbox" formControlName="experience">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">2-3 Years
+                                            <input type="checkbox" checked="checked active" formControlName="experience">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">3-6 Years
+                                            <input type="checkbox" formControlName="experience">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">6-more..
+                                            <input type="checkbox" formControlName="experience">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                    <!-- select-Categories End -->
                                 </div>
-                                <!-- select-Categories End -->
-                            </div>
-                            <div class="single-listing">
-                                <!-- Range Slider Start -->
-                                <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
-                                    <div class="small-section-tittle2">
-                                        <h4>Filter Jobs</h4>
+                                <!-- single three -->
+                                <div class="single-listing">
+                                    <!-- select-Categories start -->
+                                    <div class="select-Categories pb-50">
+                                        <div class="small-section-tittle2">
+                                            <h4>Posted Within</h4>
+                                        </div>
+                                        <label class="container">Any
+                                            <input type="checkbox" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Today
+                                            <input type="checkbox" checked="checked active" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 2 days
+                                            <input type="checkbox" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 3 days
+                                            <input type="checkbox" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 5 days
+                                            <input type="checkbox" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="container">Last 10 days
+                                            <input type="checkbox" formControlName="date">
+                                            <span class="checkmark"></span>
+                                        </label>
                                     </div>
-                                    <div class="widgets_inner">
-                                        <div class="range_item">
-                                            <!-- <div id="slider-range"></div> -->
-                                            <input type="text" class="js-range-slider" value="" />
-                                            <div class="d-flex align-items-center">
-                                                <div class="price_text">
-                                                    <p>Price :</p>
-                                                </div>
-                                                <div class="price_value d-flex justify-content-center">
-                                                    <input type="text" class="js-input-from" id="amount" readonly />
-                                                    <span>to</span>
-                                                    <input type="text" class="js-input-to" id="amount" readonly />
+                                    <!-- select-Categories End -->
+                                </div>
+                                <div class="single-listing">
+                                    <!-- Range Slider Start -->
+                                    <aside class="left_widgets p_filter_widgets price_rangs_aside sidebar_box_shadow">
+                                        <div class="small-section-tittle2">
+                                            <h4>Filter Jobs</h4>
+                                        </div>
+                                        <div class="widgets_inner">
+                                            <div class="range_item">
+                                                <!-- <div id="slider-range"></div> -->
+                                                <input type="text" class="js-range-slider" value="" formControlName="keyword"/>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="price_text">
+                                                        <p>Price :</p>
+                                                    </div>
+                                                    <div class="price_value d-flex justify-content-center">
+                                                        <input type="text" class="js-input-from" id="amount" readonly />
+                                                        <span>to</span>
+                                                        <input type="text" class="js-input-to" id="amount" readonly />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </aside>
-                              <!-- Range Slider End -->
+                                    </aside>
+                                  <!-- Range Slider End -->
+                                </div>
                             </div>
-                        </div>
+                        </form>
+                        
                         <!-- Job Category Listing End -->
                     </div>
                     <!-- Right content -->
@@ -214,159 +198,29 @@
                                 </div>
                                 <!-- Count of Job list End -->
                                 <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
+                                
+                                <div *ngFor="let offer of offersList" class="single-job-items mb-30">
                                     <div class="job-items">
                                         <div class="company-img">
                                             <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
                                         </div>
                                         <div class="job-tittle job-tittle2">
                                             <a href="#">
-                                                <h4>Digital Marketer</h4>
+                                                <h4>{{offer.title}}</h4>
                                             </a>
                                             <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
+                                                <li>company's name</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>{{offer.location}}</li>
+                                                <li>{{offer.salary}}</li>
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
+                                        <a href="job_details.html">employmentType</a>
+                                        <span>{{offer.datePosted}}</span>
                                     </div>
                                 </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list2.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list3.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list4.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list1.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list3.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
-                                <!-- single-job-content -->
-                                <div class="single-job-items mb-30">
-                                    <div class="job-items">
-                                        <div class="company-img">
-                                            <a href="#"><img src="assets/img/icon/job-list4.png" alt=""></a>
-                                        </div>
-                                        <div class="job-tittle job-tittle2">
-                                            <a href="#">
-                                                <h4>Digital Marketer</h4>
-                                            </a>
-                                            <ul>
-                                                <li>Creative Agency</li>
-                                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                                <li>$3500 - $4000</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="items-link items-link2 f-right">
-                                        <a href="job_details.html">Full Time</a>
-                                        <span>7 hours ago</span>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </section>
                         <!-- Featured_job_end -->
@@ -395,44 +249,4 @@
             </div>
         </div>
         <!--Pagination End  -->
-        
-    </main>
   
-	<!-- JS here -->
-	
-		<!-- All JS Custom Plugins Link Here here -->
-        <script src="../../assets/js/vendor/modernizr-3.5.0.min.js"></script>
-		<!-- Jquery, Popper, Bootstrap -->
-		<script src="../../assets/js/vendor/jquery-1.12.4.min.js"></script>
-        <script src="../../assets/js/popper.min.js"></script>
-        <script src="../../assets/js/bootstrap.min.js"></script>
-	    <!-- Jquery Mobile Menu -->
-        <script src="../../assets/js/jquery.slicknav.min.js"></script>
-
-		<!-- Jquery Slick , Owl-Carousel Range -->
-        <script src="../../assets/js/owl.carousel.min.js"></script>
-        <script src="../../assets/js/slick.min.js"></script>
-        <script src="../../assets/js/price_rangs.js"></script>
-		<!-- One Page, Animated-HeadLin -->
-        <script src="../../assets/js/wow.min.js"></script>
-		<script src="../../assets/js/animated.headline.js"></script>
-        <script src="../../assets/js/jquery.magnific-popup.js"></script>
-
-		<!-- Scrollup, nice-select, sticky -->
-        <script src="../../assets/js/jquery.scrollUp.min.js"></script>
-        <script src="../../assets/js/jquery.nice-select.min.js"></script>
-		<script src="../../assets/js/jquery.sticky.js"></script>
-        
-        <!-- contact js -->
-        <script src="../../assets/js/contact.js"></script>
-        <script src="../../assets/js/jquery.form.js"></script>
-        <script src="../../assets/js/jquery.validate.min.js"></script>
-        <script src="../../assets/js/mail-script.js"></script>
-        <script src="../../assets/js/jquery.ajaxchimp.min.js"></script>
-        
-		<!-- Jquery Plugins, main Jquery -->	
-        <script src="../../assets/js/plugins.js"></script>
-        <script src="../../assets/js/main.js"></script>
-        
-    </body>
-</html>
