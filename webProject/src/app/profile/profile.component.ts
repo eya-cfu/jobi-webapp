@@ -26,32 +26,32 @@ export class ProfileComponent implements OnInit {
   constructor(private studentService: StudentService, private ActivatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-   /* this.ActivatedRoute.params.subscribe((params) => this.studentService.getApplicationsByStudentId(+params.id).subscribe(
+      this.ActivatedRoute.params.subscribe((params) => this.studentService.getApplicationsByStudentId(+params.id).subscribe(
       (JobApplications) => this.JobApplications=JobApplications)
       )
-    ;*/
+    ;
 
-       /* this.ActivatedRoute.params.subscribe((params) => this.studentService.getStudentById(+params.id).subscribe(
+        this.ActivatedRoute.params.subscribe((params) => this.studentService.getStudentById(+params.id).subscribe(
       (Student) => this.Student=Student)
       )
-    ;*/
+    ;
 
-     /*
+     
       this.ActivatedRoute.params.subscribe((params) => this.studentService.getPicByStudentId(+params.id).subscribe(
       (pic) => this.pic=pic)
       )
-    ;*/
+    ;
 
   }
   ViewCV(){
-     /*
+     
       this.ActivatedRoute.params.subscribe((params) => this.studentService.getCvByStudentId(+params.id).subscribe(
       (CV) => {
       var fileURL = URL.createObjectURL(CV);
       window.open(fileURL);
       })
       )
-    ;*/
+    ;
   }
 
 
@@ -67,14 +67,14 @@ export class ProfileComponent implements OnInit {
 
           formData.append("pdf", file);
 
-        /*this.ActivatedRoute.params.subscribe((params) => this.studentService.updateCV(formData,+params.id).subscribe((res => {
+        this.ActivatedRoute.params.subscribe((params) => this.studentService.updateCV(formData,+params.id).subscribe((res) => {
 
           console.log(res);
   
           alert('Uploaded Successfully.');
   
-        })*/
-        console.log(file);
+        }))
+  
       }
   }
   

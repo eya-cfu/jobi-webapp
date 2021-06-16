@@ -18,6 +18,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { CompanyProfileComponent } from './company-profile/company-profile.component';
 import { FormsModule, NgForm, NgModel, NgModelGroup } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StudentSignInComponent } from './student-sign-in/student-sign-in.component';
+import { CompanySignInComponent } from './company-sign-in/company-sign-in.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     CompanyRegistrationComponent,
     RegistrationComponent,
     CompanyProfileComponent,
+    StudentSignInComponent,
+    CompanySignInComponent,
     
    
 

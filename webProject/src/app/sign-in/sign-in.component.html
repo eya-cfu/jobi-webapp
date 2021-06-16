@@ -1,78 +1,42 @@
 	
+	<div class="pg">
+
 	<!-- Fixed navbar -->
 	<app-navbar></app-navbar>
 	<!-- /.navbar -->
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="container ">
+        <div class="card  border-primary rounded">
+			<div >
+				<ul class="nav nav-tabs navigation">
+					<li role="presentation" ><a routerLink="/signin/studentsignin" routerLinkActive="active">Student sign in</a></li>
+					<li role="presentation" ><a routerLink="/signin/companysignin" routerLinkActive="active">Company sign in</a></li>
+				</ul> 
+			</div>
+      
 
 
-	<!-- container -->
-	<div class="container">
+        	<!--Employee and Company SignUp forms-->
+        	<div class=routing>
+          
+          		<router-outlet></router-outlet>
+        	</div>
+   		 </div>
+	</div>
+	
 
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
-		</ol>
-
-		<div class="row">
-			
-            <br>
-            <br>
-			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Sign in</h1>
-				</header>
-				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Sign in to your account</h3>
-							<p class="text-center text-muted"> sign in now and find our latest opprtunities. </p>
-							<hr>
-							
-							<form ngSubmit="onSubmit(form)" #form="ngForm" required>
-								<div class="top-margin form-group">
-									<label>Email <span class="text-danger">*</span></label>
-									<input required name="email" email #emailinput="ngModel" ngModel  class="form-control" type="email"
-									maxlength="30" >
-								</div>
-								<div *ngIf="emailinput.invalid && emailinput.dirty"
-									class="alert alert-danger"	>
-								Please enter a valid email
-								</div>
-								<div class="top-margin form-group">
-									<label>Password <span class="text-danger">*</span></label>
-									<input #passwordinput="ngModel" ngModel name="password" type="password" class="form-control" minlength="4"maxlength="15" required>
-								</div>
-								<div *ngIf="passwordinput.invalid && passwordinput.dirty"
-									class="alert alert-danger"	>
-									Please enter a valid password: minimum length is 4
-								</div>
-
-								<hr>
-
-								<div class="row">
-									<div class="col-lg-8">
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" [disabled]="!form.valid" type="submit" (click)="onSubmit(form)">Sign in</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-
-				</div>
-			
-			</article>
-			<!-- /Article -->
-
-		</div>
-	</div>	<!-- /container -->
+	
 	
 	<!--footer-->
 	<app-footer></app-footer>
 
-
+</div>
 
 
 
