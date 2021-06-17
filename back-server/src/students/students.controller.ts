@@ -1,4 +1,4 @@
-import { Res, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { Res, UploadedFile, UseInterceptors } from '@nestjs/common';
 import {
   Controller,
   Get,
@@ -10,7 +10,6 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { JwtAuthGuard } from 'src/users/auth/jwt-auth.guard';
 import { CreateStudentDto } from './dto/create-student.dto';
 import {
   cvFileFilter,
@@ -35,7 +34,7 @@ export class StudentsController {
   @UseInterceptors(
     FileInterceptor('picture', {
       storage: diskStorage({
-        destination: '../uploads/pics',
+        destination: './uploads/pics',
         filename: editFileName,
       }),
       fileFilter: imageFileFilter,
@@ -52,7 +51,7 @@ export class StudentsController {
   @UseInterceptors(
     FileInterceptor('cv', {
       storage: diskStorage({
-        destination: '../uploads/cvs',
+        destination: './uploads/cvs',
         filename: editFileName,
       }),
       fileFilter: cvFileFilter,

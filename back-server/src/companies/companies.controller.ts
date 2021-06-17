@@ -48,7 +48,7 @@ export class CompaniesController {
   @UseInterceptors(
     FileInterceptor('logo', {
       storage: diskStorage({
-        destination: '../uploads/logos',
+        destination: './uploads/logos',
         filename: editFileName,
       }),
       fileFilter: imageFileFilter,
